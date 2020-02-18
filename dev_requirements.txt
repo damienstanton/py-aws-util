@@ -1,0 +1,3 @@
+pytest
+black
+python-language-server
