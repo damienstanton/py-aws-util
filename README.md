@@ -118,15 +118,15 @@ path_details = ("s3://some-bucket/some_thing")
 
 ## S3 Transform
 
-Simple transformation functions built on top of the S3 manager class
+Simple `pandas` <-> S3 transformation functions built on top of the S3 manager class
 
 ```py
 # Not worth going into details, functions do
 # what one would expect
 from s3_transform import (
-    csv_to_df,
-    df_to_csv,
-    json_to_df,
-    df_to_json
+    read_csv_to_df,    
+    read_json_to_df,
+    write_df_to_json
+    write_df_to_csv,
 )
 ```

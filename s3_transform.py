@@ -8,7 +8,7 @@ from s3_manager import Session, parse_path
 s3mgr = Session()
 
 
-def csv_to_df(path: str) -> DataFrame:
+def read_csv_to_df(path: str) -> DataFrame:
     """
     Reads a csv-like file from the given S3 path and converts it into a Pandas dataframe
     """
@@ -24,9 +24,9 @@ def csv_to_df(path: str) -> DataFrame:
     return read_csv(s3mgr.buffer)
 
 
-def df_to_csv(frame: DataFrame, path: str, **kwargs):
+def write_df_to_csv(frame: DataFrame, path: str, **kwargs):
     """
-    Reads a dataframe-like file from the given S3 path and converts it into a CSV object
+    Takes a dataframe-like file from the given S3 path and writes it into a CSV object
     """
     parsed = parse_path(path)
     s3mgr._clear_buffer()
@@ -36,7 +36,7 @@ def df_to_csv(frame: DataFrame, path: str, **kwargs):
     )
 
 
-def json_to_df(path: str) -> DataFrame:
+def read_json_to_df(path: str) -> DataFrame:
     """
     Reads a json-like file from the given S3 path and converts it into a Pandas dataframe
     """
@@ -52,9 +52,9 @@ def json_to_df(path: str) -> DataFrame:
     return read_json(s3mgr.buffer)
 
 
-def df_to_json(frame: DataFrame, path: str, **kwargs):
+def write_df_to_json(frame: DataFrame, path: str, **kwargs):
     """
-    Reads a dataframe-like file from the given S3 path and converts it into a JSON object
+    Takes a dataframe-like file from the given S3 path and writes it into a JSON object
     """
     parsed = parse_path(path)
     s3mgr._clear_buffer()
