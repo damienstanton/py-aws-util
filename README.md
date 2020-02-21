@@ -1,6 +1,7 @@
 # py-aws-util
+This software is distrubted under the MIT license. It will not be actively developed further.
 
-## A module for data scientists to more easily manage S3 and EMR cluster resources on AWS
+A module for data scientists to more easily manage S3 and EMR cluster resources on AWS
 
 ### Environment
 
